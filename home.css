@@ -1,0 +1,29 @@
+table{
+  width: 50%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  text-align: left;
+}
+tr {
+  border: 1px solid #cbcbcb;
+}
+th,td{
+  border :  1px solid #cbcbcb ;
+  height :  30px;
+  width  :  600px;
+  padding:  10px;
+}
+tr:hover {
+ background: #F5F5F5;
+}
+input{
+    height: 50px; 
+    padding: 5px; 
+    border-radius:10px; 
+    font-size:20px; 
+    background-color:#87CEFA; 
+    cursor: pointer;
+}
+.formright{
+    float: right;
+}
