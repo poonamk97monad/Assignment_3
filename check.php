@@ -1,21 +1,27 @@
 <?php
 
-  include('Connection.php');
-  include('Auth.php');
-  include('User.php');
-  include('Validation.php');
+  include ('Connection.php');
+  include ('Auth.php');
+  include ('User.php');
+  include ('Validation.php');
+  include ('UserData.php');
+  include ('Student.php');
+  include ('Teacher.php');
 
   $objAuth       = new Auth();
   $objUser       = new User();
   $objValidation = new Validation();
+  $objStudent    = new Student();
+  $objTeacher    = new Teacher();
+
 
   if(isset($_POST["save"])) {
-      $strMsg              = $objValidation->check_empty($_POST, array('fname','lname','email','phone','about','password','repassword','usertype'));
+      $strMessage              = $objValidation->check_empty($_POST, array('fname','lname','email','phone','about','password','repassword','usertype'));
       $strCheckPhone       = $objValidation->is_phone_valid($_POST['phone']);
       $strCheckEmail       = $objValidation->is_email_valid($_POST['email']);
       $strCheckPassword    = $objValidation->is_password_correct($_POST['password'],$_POST['repassword']);
-      if($strMsg != null) {
-            echo $strMsg;
+      if($strMessage != null) {
+            echo $strMessage;
             //link to the previous page
             echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
       } elseif (!$strCheckPhone) {
@@ -57,12 +63,12 @@
 
     if(isset($_POST["update"])) {
 
-         $strMsg            = $objValidation->check_empty($_POST, array('fname','lname','email','phone','about','usertype'));
+        $strMessage            = $objValidation->check_empty($_POST, array('fname','lname','email','phone','about','usertype'));
          $strCheckPhone     = $objValidation->is_phone_valid($_POST['phone']);
          $strCheckEmail     = $objValidation->is_email_valid($_POST['email']);
          $strUserType       = $_POST['usertype'];
-        if($strMsg != null) {
-            echo $strMsg;
+        if($strMessage != null) {
+            echo $strMessage;
             //link to the previous page
             echo "<br/><a href = 'javascript:self.history.back();'>Go Back</a>";
         } elseif (!$strCheckPhone) {
@@ -75,11 +81,28 @@
             echo "<br/><a href = 'javascript:self.history.back();'>Go Back</a>";
         }
         else {
-            $arrMixAllFields = $objUser->update();
-            
+            switch ($strUserType) {
+                case 'Student':
+                    $arrMixAllFields  = $objStudent->update_student();
+                    break;
+                case 'Teacher':
+                    $arrMixAllFields = $objTeacher->update_teacher();
+
+                    break;
+                default:
+                    echo "Select User Type";die;
+                    break;
+            }
+
         }
 
     }
 
+?>
+<?php
 
+if(isset($_GET['idd'])) {
+
+    $objDelete = $objUser->delete();
+}
 ?>

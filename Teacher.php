@@ -9,39 +9,51 @@ class Teacher extends UserData
      * @return array - $arrStrFields
      */
     public function getFields() {
-        $query = "SELECT id,deparment_name,is_hod,teaching_subjects FROM users ";
-        echo $query;
-        $arrObjResult = $this->objConnection->query($query);
-
-        if ($arrObjResult == false) {
-            return false;
-        }
-
-        $arrStrFields = array();
-
-        while ($row = $arrObjResult->fetch_assoc()) {
-            $arrStrFields[] = $row;
-        }
-
+        $arrStrFields = array(',deparment_name',',is_hod',',teaching_subjects');
         return $arrStrFields;
     }
-
-    public function update_student() {
+    /**
+     * To update All fields
+     * @return void
+     */
+    public function update_teacher() {
 
         $intId             = $_POST['id'];
+        $strFirstName      = $_POST['fname'];
+        $strLastName       = $_POST['lname'];
+        $strEmailId        = $_POST['email'];
+        $intPhoneNumber    = $_POST['phone'];
+        $strAbout          = $_POST['about'];
+        $strUserType       = $_POST['usertype'];
         $strDeparmentName  = $_POST['deparment_name'];
         $strHod            = $_POST['is_hod'];
         $strTeachSubjects  = $_POST['teaching_subjects'];
 
-        $arrSql = "update users SET deparment_name= '$strDeparmentName',is_hod= '$strHod',teaching_subjects= '$strTeachSubjects' where id = '$intId'";
+        $arrStrAllFields = $this->getAllFields();
+        $arrStrFields    = $this->getFields();
+
+        $strQueryBuild = "";
+        foreach ($arrStrAllFields as $strField) {
+
+            if(isset($_POST[$strField])) {
+                $strQueryBuild .= $strField.'= "'.$_POST[$strField].'"';
+            }
+        }
+        foreach ($arrStrFields as $strField) {
+
+            if(isset($_POST[$strField])) {
+                $strQueryBuild .= $strField.'= "'.$_POST[$strField].'"';
+            }
+        }
+
+        $arrSql = "update users SET $strQueryBuild where id = '$intId'";
         $arrObjResult = mysqli_query($this->objConnection, $arrSql);
         if (!$arrObjResult) {
             die("record not update");
-        }
-        else {
+        } else {
             ?>
-            <script type="text/javascript">
-                alert("record update succesfully");
+            <script type = "text/javascript">
+                alert('upadate data');
                 window.location = "view.php";
             </script>
             <?php

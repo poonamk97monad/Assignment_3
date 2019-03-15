@@ -60,7 +60,7 @@ session_start();
                                echo'<td>'.$res['phone'].'</td>';
                                echo'<td>'.$res['about'].'</td>';
                                echo'<td>'.$res['usertype'].'</td>';
-                               echo'<td ><a class="del_btn" href="delete.php?idd='.$res["id"].'"> Delete</a></td>';
+                               echo'<td ><a name="delete" class="del_btn" href="check.php?idd='.$res["id"].'"> Delete</a></td>';
                                echo'<td ><a class="edit_btn" href="update.php?id='.$res["id"].'&fname='.$res["fname"].'&lname='.$res["lname"].'&email='.$res["email"].'&phone='.$res["phone"].'&about='.$res["about"].'&usertype='.$res["usertype"].'&class_name='.$res["class_name"].'&is_monitor='.$res["is_monitor"].'&studying_subjects='.$res["studying_subjects"].'&deparment_name='.$res["deparment_name"].'&is_hod='.$res["is_hod"].'&teaching_subjects='.$res["teaching_subjects"].'">Edit</a></td>';
                                echo'</tr>';
                                }

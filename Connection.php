@@ -12,6 +12,7 @@
       /**
        * database connectivity
        * User constructor.
+       * @return object
        */
       public function __construct()
       {
@@ -26,5 +27,4 @@
       }
   }
 
-
-?>
+  

@@ -2,7 +2,7 @@
 
 include('Connection.php');
 session_start();
-  if(!isset($_SESSION['userid'])){
+  if(!isset($_SESSION['userid'])) {
       # redirect to the login page
       header('Location: index.php?msg=' . urlencode('Login first.'));
       exit();

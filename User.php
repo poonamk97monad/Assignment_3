@@ -71,39 +71,6 @@ class User extends Connection
             ?>
             <script type = "text/javascript">
                 confirm('Are you sure you want to delete?');
-                window.location = "home.php";
-            </script>
-            <?php
-        }
-    }
-
-    /**
-     * To update data in database
-     * @return void
-     */
-    public function update() {
-        $intId             = $_POST['id'];
-        $strFirstName      = $_POST['fname'];
-        $strLastName       = $_POST['lname'];
-        $strEmailId        = $_POST['email'];
-        $intPhoneNumber    = $_POST['phone'];
-        $strAbout          = $_POST['about'];
-        $strUserType       = $_POST['usertype'];
-        $strClassName      = $_POST['class_name'];
-        $strMonitor        = $_POST['is_monitor'];
-        $strStudySubjects  = $_POST['studying_subjects'];
-        $strDeparmentName  = $_POST['deparment_name'];
-        $strHod            = $_POST['is_hod'];
-        $strTeachSubjects  = $_POST['teaching_subjects'];
-
-        $arrSql = "update users SET fname = '$strFirstName',lname = '$strLastName', email = '$strEmailId',phone = '$intPhoneNumber',about = '$strAbout',usertype = '$strUserType',class_name = '$strClassName',is_monitor = '$strMonitor',studying_subjects = '$strStudySubjects',deparment_name= '$strDeparmentName',is_hod= '$strHod',teaching_subjects= '$strTeachSubjects' where id = '$intId'";
-        $arrObjResult = mysqli_query($this->objConnection, $arrSql);
-        if (!$arrObjResult) {
-            die("record not update");
-        } else {
-            ?>
-            <script type="text/javascript">
-                alert("record update succesfully");
                 window.location = "view.php";
             </script>
             <?php
