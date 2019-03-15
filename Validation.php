@@ -10,15 +10,15 @@ class Validation extends Connection
      * @param  $filels
      * @return String
      */
-    public function check_empty($data, $fields) {
+    public function checkEmptyFields($data, $fields) {
 
-        $strMsg = null;
+        $strMessage = null;
         foreach ($fields as $value) {
             if (empty($data[$value])) {
-                $strMsg .= "$value field empty <br />";
+                $strMessage .= "$value field empty <br />";
             }
         }
-        return $strMsg;
+        return $strMessage;
     }
 
     /**
@@ -26,7 +26,7 @@ class Validation extends Connection
      * @param  $intPhone
      * @return Boolean
      */
-    public function is_phone_valid($intPhone) {
+    public function isPhoneValid($intPhone) {
 
         if (preg_match("/^[0-9]+$/", $intPhone)) {
             return true;
@@ -40,7 +40,7 @@ class Validation extends Connection
      * @param  $strRePassword
      * @return Boolean
      */
-    public function is_password_correct($strPassword,$strRePassword) {
+    public function isPasswordCorrect($strPassword,$strRePassword) {
 
         if ($strPassword === $strRePassword) {
             return true;
@@ -53,7 +53,7 @@ class Validation extends Connection
      * @param  $strEmail
      * @return Boolean
      */
-    public function is_email_valid($strEmail) {
+    public function isEmailValid($strEmail) {
 
         if (filter_var($strEmail, FILTER_VALIDATE_EMAIL)) {
             return true;

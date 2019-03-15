@@ -16,7 +16,7 @@ class Student extends UserData
      * To update All fields
      * @return void
      */
-    public function update_student() {
+    public function updateFields() {
 
         $intId             = $_POST['id'];
         $strFirstName      = $_POST['fname'];
@@ -48,23 +48,19 @@ class Student extends UserData
             }
         }
 
-        /*$text = implode(",", $strQueryBuild);*/
-
-//        $strQueryBuild = "fname = '$strFirstName',lname = '$strLastName', email = '$strEmailId',phone = '$intPhoneNumber',about = '$strAbout',usertype = '$strUserType',class_name = '$strClassName',is_monitor = '$strMonitor',studying_subjects = '$strStudySubjects',deparment_name= null ,is_hod= null ,teaching_subjects= null where id = '$intId'";
-
         $arrSql = "update users SET $strQueryBuild where id = '$intId'";
-         echo $arrSql;
             $arrObjResult = mysqli_query($this->objConnection, $arrSql);
             if (!$arrObjResult) {
                 die("record not update");
-            } else {
+            }
+            else {
                 ?>
                 <script type = "text/javascript">
                     alert('upadate data');
                     window.location = "view.php";
                 </script>
                 <?php
-           }
+            }
 
     }
 

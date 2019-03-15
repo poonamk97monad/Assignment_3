@@ -8,7 +8,7 @@ class User extends Connection
      * To insert data in database
      * @return void
      */
-    public function register() {
+    public function registerUser() {
 
         $strFirstName      = $_POST['fname'];
         $strLastName       = $_POST['lname'];
@@ -61,7 +61,7 @@ class User extends Connection
      * To delete user details in database
      * @return void
      */
-    public function delete() {
+    public function deleteUser() {
         $intId  = $_GET['idd'];
         $arrSql = "delete from users where id = '$intId'";
         $arrObjResult = mysqli_query($this->objConnection, $arrSql);

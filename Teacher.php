@@ -16,7 +16,7 @@ class Teacher extends UserData
      * To update All fields
      * @return void
      */
-    public function update_teacher() {
+    public function updateFields() {
 
         $intId             = $_POST['id'];
         $strFirstName      = $_POST['fname'];

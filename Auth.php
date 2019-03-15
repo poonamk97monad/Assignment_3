@@ -8,7 +8,7 @@ class Auth extends Connection
      * User login
      * @return void
      */
-    public function login() {
+    public function loginUser() {
         $strUserId   = $_POST['userid'];
         $strPassword = $_POST['password'];
         // To select email and password with mysqli database
@@ -29,7 +29,7 @@ class Auth extends Connection
      * User logout function
      * @return void
      */
-    public function logout() {
+    public function logoutUser() {
         session_start();
         unset($_SESSION['userid']);
         header('Location: index.php');

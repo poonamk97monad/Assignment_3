@@ -1,171 +1,177 @@
 * {
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 body {
-  font-family: Arial;
-  padding: 10px;
-  background: #f1f1f1;
+   font-family: Arial;
+   padding: 10px;
+   background: #f1f1f1;
 }
-h2{
-  color: #0066cc;
-  text-align: center;
+
+h2 {
+   color: #0066cc;
+   text-align: center;
 }
 
 .header {
-  padding:5px;
-  height:50px;
-  text-align: center;
-  background: #04417F;
+   padding:5px;
+   height:50px;
+   text-align: center;
+   background: #04417F;
 }
 
 .header h1 {
-  font-size: 50px;
+   font-size: 50px;
 }
-
 
 .topnav {
-  overflow: hidden;
-  background-color: #333;
+   overflow: hidden;
+   background-color: #333;
 }
 
-
 .topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+   float: left;
+   display: block;
+   color: #f2f2f2;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+   background-color: #ddd;
+   color: black;
 }
 
 .leftcolumn {
-  float: left;
-  width: 50%;
+   float: left;
+   width: 50%;
 }
+
 .imgcontainer {
-  text-align: center;
+   text-align: center;
 }
+
 img.avatar {
-  width:5%;
-  border-radius: 50%;
+   width:5%;
+   border-radius: 50%;
 }
 
 .rightcolumn {
-  float: left;
-  width: 50%;
-  background-color: #f1f1f1;
-  padding-left: 20px;
+   float: left;
+   width: 50%;
+   background-color: #f1f1f1;
+   padding-left: 20px;
 }
-.loginbut{
-  cursor: pointer;
-  border-radius: 6px;
+
+.loginbut {
+   cursor: pointer;
+   border-radius: 6px;
 }
-img
-{
-  margin-top: 50px;
+
+img {
+   margin-top: 50px;
 }
-.fakeimg2{
-  height:500px;
+
+.fakeimg2 {
+   height:500px;
 }
+
 .fakeimg {
-  background-color: #8EDDEC;
-  width: 100%;
-  padding: 10px;
-  opacity: 0.8;
-}
-.viewimg{
-  background-color: #8EDDEC;
-  width: 100%;
-  padding: 10px;
-  opacity: 0.8;
-  height:auto;
-}
-.fakeimg1{
-  height:150px;
-  background-color: #A9ADAD;
-}
-.fakeimg3{
-  background-color: #A9ADAD;
-}
-.hiddenid{
- visibility: hidden;
- display: none;
-
-}
-.edit_btn {
-    text-decoration: none;
-    padding: 2px 5px;
-    background: #0066cc;
-    color: white;
-    border-radius: 3px;
+   background-color: #8EDDEC;
+   width: 100%;
+   padding: 10px;
+   opacity: 0.8;
 }
 
-.del_btn {
-    text-decoration: none;
-    padding: 2px 5px;
-    color: white;
-    border-radius: 3px;
-    background: #800000;
+.viewimg {
+   background-color: #8EDDEC;
+   width: 100%;
+   padding: 10px;
+   opacity: 0.8;
+   height:auto;
 }
 
-.card {
-  background-color: white;
-  padding: 5px;
-  margin-top: 20px;
-}
-.card1{
-  height:775px;
+.fakeimg1 {
+   height:150px;
+   background-color: #A9ADAD;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.fakeimg3 {
+   background-color: #A9ADAD;
 }
 
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #083767;
-  margin-top: 20px;
-}
-.input-group {
-    margin: 5px 0px 5px 170px;
-}
-.input-group label {
-    display: block;
-    text-align: left;
-    margin: 3px;
-}
-.input-group input{
-    /*height: 20px;
-    width: 70%;
-    padding: 5px 10px;*/
-    font-size: 12px;
-    border-radius: 5px;
-    border: 1px solid gray;
-}
-.viewbtn{
-  font: left;
-}
-.uphidden
-{
+.hiddenid {
   visibility: hidden;
   display: none;
 }
+
+.editbtn {
+   text-decoration: none;
+   padding: 2px 5px;
+   background: #0066cc;
+   color: white;
+   border-radius: 3px;
+}
+
+.delbtn {
+   text-decoration: none;
+   padding: 2px 5px;
+   color: white;
+   border-radius: 3px;
+   background: #800000;
+}
+
+.card {
+   background-color: white;
+   padding: 5px;
+   margin-top: 20px;
+}
+
+.row:after {
+   content: "";
+   display: table;
+   clear: both;
+}
+
+.footer {
+   padding: 20px;
+   text-align: center;
+   background: #083767;
+   margin-top: 20px;
+}
+
+.input-group {
+   margin: 5px 0px 5px 170px;
+}
+
+.input-group label {
+   display: block;
+   text-align: left;
+   margin: 3px;
+}
+
+.input-group input {
+   font-size: 12px;
+   border-radius: 5px;
+   border: 1px solid gray;
+}
+
+.viewbtn {
+  font: left;
+}
+
+.uphidden {
+  visibility: hidden;
+  display: none;
+}
+
 .error {
   color: #FF0000;
   font-size: 12px;
 }
 
-.userhidden{
+.userhidden {
     visibility: hidden;
     display: none;
 }

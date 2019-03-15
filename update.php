@@ -103,26 +103,30 @@ session_start();
                      </select>
                  </div>
                  <!--teacher-->
-                 <p  id="teacher" class="teacher">
-                     <label>Deparment_name:</label>
-                     <input type="text" name="deparment_name" value=NUll  placeholder="department_name" id="">
-                     <label>Are you HOD:</label>
-                     <input type="radio" name="is_hod" value="yes"> YES
-                     <input type="radio" name="is_hod" value="no" checked> NO
-                     <label>Teaching Subjects:</label>
-                     <input type="text" name="teaching_subjects" value=NUll placeholder="teaching_subjects" id="">
+                 <center>
+                     <p  id="teacher" class="teacher">
+                         <label>Deparment_name:</label>
+                         <input type="text" name="deparment_name" value=NUll  placeholder="department_name" ><br><br>
+                         <label>Are you HOD:</label>
+                         <input type="radio" name="is_hod" value="yes"> YES
+                         <input type="radio" name="is_hod" value="no" checked> NO<br><br>
+                         <label>Teaching Subjects:</label>
+                         <input type="text" name="teaching_subjects" value=NUll placeholder="teaching_subjects" >
 
-                 </p>
+                     </p>
+                 </center>
                  <!--student-->
-                 <p  id="student" class="student">
-                     <label>Class Name:</label>
-                     <input type="text" name="class_name" value=NUll  placeholder="class_name" id="">
-                     <label>Are you MONITOR:</label>
-                     <input type="radio" name="is_monitor" value="yes" > YES
-                     <input type="radio" name="is_monitor" value="no" checked> NO
-                     <label>Studying Subjects:</label>
-                     <input type="text" name="studying_subjects" value=NUll placeholder="studying_subjects" id="">
-                 </p>
+                 <center>
+                     <p  id="student" class="student">
+                         <label>Class Name:</label>
+                         <input type="text" name="class_name" value=NUll placeholder="class_name" ><br><br>
+                         <label>Are you MONITOR:</label>
+                         <input type="radio" name="is_monitor" value="yes" > YES
+                         <input type="radio" name="is_monitor" value="no" checked> NO<br><br>
+                         <label>Studying Subjects:</label>
+                         <input type="text" name="studying_subjects" value=NUll placeholder="studying_subjects" >
+                     </p>
+                 </center>
                  <div class="input-group">
                         <?php
 

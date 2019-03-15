@@ -16,10 +16,10 @@
 
 
   if(isset($_POST["save"])) {
-      $strMessage              = $objValidation->check_empty($_POST, array('fname','lname','email','phone','about','password','repassword','usertype'));
-      $strCheckPhone       = $objValidation->is_phone_valid($_POST['phone']);
-      $strCheckEmail       = $objValidation->is_email_valid($_POST['email']);
-      $strCheckPassword    = $objValidation->is_password_correct($_POST['password'],$_POST['repassword']);
+      $strMessage          = $objValidation->checkEmptyFields($_POST, array('fname','lname','email','phone','about','password','repassword','usertype'));
+      $strCheckPhone       = $objValidation->isPhoneValid($_POST['phone']);
+      $strCheckEmail       = $objValidation->isEmailValid($_POST['email']);
+      $strCheckPassword    = $objValidation->isPasswordCorrect($_POST['password'],$_POST['repassword']);
       if($strMessage != null) {
             echo $strMessage;
             //link to the previous page
@@ -40,13 +40,13 @@
       }
         else {
             // To insert with mysqli database
-            $objRegister = $objUser->register();
+            $objRegister = $objUser->registerUser();
       }
   }
   else {
     if(isset($_POST["login"])) {
         /** @var object $obj */
-        $objLogin = $objAuth->login();
+        $objLogin = $objAuth->loginUser();
     }
   }
 
@@ -55,7 +55,7 @@
 
    if(isset($_POST["logout"])) {
 
-       $objLogout = $objAuth->logout();
+       $objLogout = $objAuth->logoutUser();
    }
 
 ?>
@@ -63,9 +63,9 @@
 
     if(isset($_POST["update"])) {
 
-        $strMessage            = $objValidation->check_empty($_POST, array('fname','lname','email','phone','about','usertype'));
-         $strCheckPhone     = $objValidation->is_phone_valid($_POST['phone']);
-         $strCheckEmail     = $objValidation->is_email_valid($_POST['email']);
+         $strMessage        = $objValidation->checkEmptyFields($_POST, array('fname','lname','email','phone','about','usertype'));
+         $strCheckPhone     = $objValidation->isPhoneValid($_POST['phone']);
+         $strCheckEmail     = $objValidation->isEmailValid($_POST['email']);
          $strUserType       = $_POST['usertype'];
         if($strMessage != null) {
             echo $strMessage;
@@ -83,10 +83,10 @@
         else {
             switch ($strUserType) {
                 case 'Student':
-                    $arrMixAllFields  = $objStudent->update_student();
+                    $arrMixAllFields = $objStudent->updateFields();
                     break;
                 case 'Teacher':
-                    $arrMixAllFields = $objTeacher->update_teacher();
+                    $arrMixAllFields = $objTeacher->updateFields();
 
                     break;
                 default:
@@ -103,6 +103,6 @@
 
 if(isset($_GET['idd'])) {
 
-    $objDelete = $objUser->delete();
+    $objDelete = $objUser->deleteUser();
 }
 ?>

@@ -2,10 +2,6 @@
 
 class UserData extends Connection
 {
-//    public function __construct()
-//    {
-//
-//    }
 
     /**
      * To get list of all fields for user
